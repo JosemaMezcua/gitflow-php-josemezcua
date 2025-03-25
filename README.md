@@ -201,5 +201,3 @@ Este documento describe los pasos para configurar y utilizar Git Flow en un proy
 
 ---
 
-¡Listo! Con estos pasos habrás completado correctamente el uso de Git Flow en tu proyecto PHP. 🚀
-
