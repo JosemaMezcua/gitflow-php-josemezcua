@@ -1,212 +1,205 @@
 # gitflow-php-josemezcua
 
-Paso 1: Creación del repositorio y configuración inicial
-Crea un repositorio en GitHub con el nombre:
-gitflow-php-[tu_nombre]
 
-Clónalo en tu equipo local:
+# Uso de Git Flow en un Proyecto PHP
 
-bash
-Copiar
-Editar
-git clone https://github.com/tu_usuario/gitflow-php-tu_nombre.git
-cd gitflow-php-tu_nombre
-Inicializa Git Flow:
+Este documento describe los pasos para configurar y utilizar Git Flow en un proyecto PHP.
 
-bash
-Copiar
-Editar
-git flow init
-Acepta las opciones por defecto.
+---
 
-Asegúrate de que la rama develop existe, si no, créala:
+## **Paso 1: Creación del repositorio y configuración inicial**
 
-bash
-Copiar
-Editar
-git checkout -b develop
-git push origin develop
-Entrega
-URL del repositorio en GitHub.
+1. Crea un repositorio en GitHub con el nombre:
+   ```
+   gitflow-php-[tu_nombre]
+   ```
 
-Captura de git branch -a.
+2. Clónalo en tu equipo local:
+   ```bash
+   git clone https://github.com/tu_usuario/gitflow-php-tu_nombre.git
+   cd gitflow-php-tu_nombre
+   ```
 
-bash
-Copiar
-Editar
-git branch -a
-README.md con los pasos realizados.
+3. Inicializa Git Flow:
+   ```bash
+   git flow init
+   ```
+   Acepta las opciones por defecto.
 
-Paso 2: Creación de un archivo PHP
-Crea una nueva funcionalidad en Git Flow:
+4. Asegúrate de que la rama `develop` existe, si no, créala:
+   ```bash
+   git checkout -b develop
+   git push origin develop
+   ```
 
-bash
-Copiar
-Editar
-git flow feature start crear-mi-archivo
-Dentro de una carpeta alumnos/, crea un archivo PHP:
+### **Entrega:**
+- URL del repositorio en GitHub.
+- Captura de `git branch -a`:
+  ```bash
+  git branch -a
+  ```
+- README.md con los pasos realizados.
 
-bash
-Copiar
-Editar
-mkdir -p alumnos
-nano alumnos/tu_nombre.php
-Contenido del archivo:
+---
 
-php
-Copiar
-Editar
-<?php
-// Archivo: alumnos/tu_nombre.php
-echo "Hola, soy [Tu Nombre] y estoy aprendiendo Git Flow!";
-?>
-Confirma y sube los cambios:
+## **Paso 2: Creación de un archivo PHP**
 
-bash
-Copiar
-Editar
-git add alumnos/tu_nombre.php
-git commit -m "Añadir archivo PHP con mi nombre"
-git push origin feature/crear-mi-archivo
-Finaliza la funcionalidad y fusiónala en develop:
+1. Crea una nueva funcionalidad en Git Flow:
+   ```bash
+   git flow feature start crear-mi-archivo
+   ```
 
-bash
-Copiar
-Editar
-git flow feature finish crear-mi-archivo
-git push origin develop
-Entrega
-Captura del log de commits:
+2. Dentro de una carpeta `alumnos/`, crea un archivo PHP:
+   ```bash
+   mkdir -p alumnos
+   nano alumnos/tu_nombre.php
+   ```
 
-bash
-Copiar
-Editar
-git log --oneline --graph
-README.md explicando los pasos.
+3. Contenido del archivo:
+   ```php
+   <?php
+   // Archivo: alumnos/tu_nombre.php
+   echo "Hola, soy [Tu Nombre] y estoy aprendiendo Git Flow!";
+   ?>
+   ```
 
-Paso 3: Modificación de index.php
-Crea una nueva funcionalidad en Git Flow:
+4. Confirma y sube los cambios:
+   ```bash
+   git add alumnos/tu_nombre.php
+   git commit -m "Añadir archivo PHP con mi nombre"
+   git push origin feature/crear-mi-archivo
+   ```
 
-bash
-Copiar
-Editar
-git flow feature start modificar-index
-Modifica index.php agregando la línea:
+5. Finaliza la funcionalidad y fusiónala en `develop`:
+   ```bash
+   git flow feature finish crear-mi-archivo
+   git push origin develop
+   ```
 
-php
-Copiar
-Editar
-<?php
-include "alumnos/tu_nombre.php";
-?>
-Antes de confirmar los cambios, muestra la diferencia:
+### **Entrega:**
+- Captura del log de commits:
+  ```bash
+  git log --oneline --graph
+  ```
+- README.md explicando los pasos.
 
-bash
-Copiar
-Editar
-git diff
-Confirma y sube la funcionalidad:
+---
 
-bash
-Copiar
-Editar
-git add index.php
-git commit -m "Incluir mi archivo PHP en index.php"
-git push origin feature/modificar-index
-Finaliza la funcionalidad:
+## **Paso 3: Modificación de `index.php`**
 
-bash
-Copiar
-Editar
-git flow feature finish modificar-index
-git push origin develop
-Entrega
-Captura de git diff antes de confirmar.
+1. Crea una nueva funcionalidad en Git Flow:
+   ```bash
+   git flow feature start modificar-index
+   ```
 
-README.md explicando los pasos.
+2. Modifica `index.php` agregando la línea:
+   ```php
+   <?php
+   include "alumnos/tu_nombre.php";
+   ?>
+   ```
 
-Paso 4: Resolución de conflictos
-Modifica index.php en la misma línea que otro compañero.
+3. Antes de confirmar los cambios, muestra la diferencia:
+   ```bash
+   git diff
+   ```
 
-Realiza un merge en develop:
+4. Confirma y sube la funcionalidad:
+   ```bash
+   git add index.php
+   git commit -m "Incluir mi archivo PHP en index.php"
+   git push origin feature/modificar-index
+   ```
 
-bash
-Copiar
-Editar
-git checkout develop
-git merge feature/modificar-index
-Si hay un conflicto, usa git status para verlo:
+5. Finaliza la funcionalidad:
+   ```bash
+   git flow feature finish modificar-index
+   git push origin develop
+   ```
 
-bash
-Copiar
-Editar
-git status
-Edita index.php manualmente y resuelve el conflicto.
+### **Entrega:**
+- Captura de `git diff` antes de confirmar.
+- README.md explicando los pasos.
 
-Añade y confirma los cambios:
+---
 
-bash
-Copiar
-Editar
-git add index.php
-git commit -m "Resolver conflicto en index.php"
-git push origin develop
-Entrega
-Captura de git status mostrando el conflicto.
+## **Paso 4: Resolución de conflictos**
 
-Captura del archivo index.php después de la resolución.
+1. Modifica `index.php` en la misma línea que otro compañero.
+2. Realiza un merge en `develop`:
+   ```bash
+   git checkout develop
+   git merge feature/modificar-index
+   ```
+3. Si hay un conflicto, usa `git status` para verlo:
+   ```bash
+   git status
+   ```
+4. Edita `index.php` manualmente y resuelve el conflicto.
+5. Añade y confirma los cambios:
+   ```bash
+   git add index.php
+   git commit -m "Resolver conflicto en index.php"
+   git push origin develop
+   ```
 
-README.md explicando cómo resolviste el conflicto.
+### **Entrega:**
+- Captura de `git status` mostrando el conflicto.
+- Captura del archivo `index.php` después de la resolución.
+- README.md explicando cómo resolviste el conflicto.
 
-Paso 5: Eliminación de un archivo
-Crea una nueva funcionalidad en Git Flow:
+---
 
-bash
-Copiar
-Editar
-git flow feature start borrar-mi-archivo
-Elimina tu archivo PHP:
+## **Paso 5: Eliminación de un archivo**
 
-bash
-Copiar
-Editar
-rm alumnos/tu_nombre.php
-git add alumnos/tu_nombre.php
-git commit -m "Eliminar mi archivo PHP"
-Sube los cambios y finaliza la funcionalidad:
+1. Crea una nueva funcionalidad en Git Flow:
+   ```bash
+   git flow feature start borrar-mi-archivo
+   ```
 
-bash
-Copiar
-Editar
-git push origin feature/borrar-mi-archivo
-git flow feature finish borrar-mi-archivo
-git push origin develop
-Entrega
-Captura del log git log --oneline donde se vea la eliminación.
+2. Elimina tu archivo PHP:
+   ```bash
+   rm alumnos/tu_nombre.php
+   git add alumnos/tu_nombre.php
+   git commit -m "Eliminar mi archivo PHP"
+   ```
 
-README.md explicando cómo eliminaste el archivo.
+3. Sube los cambios y finaliza la funcionalidad:
+   ```bash
+   git push origin feature/borrar-mi-archivo
+   git flow feature finish borrar-mi-archivo
+   git push origin develop
+   ```
 
-Paso 6: Publicación de la versión final
-Crea una release en Git Flow:
+### **Entrega:**
+- Captura del log `git log --oneline` donde se vea la eliminación.
+- README.md explicando cómo eliminaste el archivo.
 
-bash
-Copiar
-Editar
-git flow release start v1.0
-Finaliza la versión y fusiónala en main:
+---
 
-bash
-Copiar
-Editar
-git flow release finish v1.0
-Etiqueta la versión final:
+## **Paso 6: Publicación de la versión final**
 
-bash
-Copiar
-Editar
-git tag -a v1.0 -m "Versión 1.0 estable"
-git push origin --tags
-Entrega
-Comandos utilizados (git tag, git flow release finish, etc.).
+1. Crea una release en Git Flow:
+   ```bash
+   git flow release start v1.0
+   ```
 
-README.md con los pasos para publicar una versión estable.
+2. Finaliza la versión y fusiónala en `main`:
+   ```bash
+   git flow release finish v1.0
+   ```
+
+3. Etiqueta la versión final:
+   ```bash
+   git tag -a v1.0 -m "Versión 1.0 estable"
+   git push origin --tags
+   ```
+
+### **Entrega:**
+- Comandos utilizados (`git tag`, `git flow release finish`, etc.).
+- README.md con los pasos para publicar una versión estable.
+
+---
+
+¡Listo! Con estos pasos habrás completado correctamente el uso de Git Flow en tu proyecto PHP. 🚀
+
